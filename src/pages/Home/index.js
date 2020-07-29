@@ -4,6 +4,8 @@ import dadosIniciais from '../../data/dados_iniciais.json';
 import BannerMain from '../../components/BannerMain';
 import Carousel from '../../components/Carousel';
 import Footer from '../../components/Footer';
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 
 function Home() {
   return (
