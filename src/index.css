@@ -6,6 +6,7 @@
 :root {
   --primary: #FF700D;
   --black: #000000;
+  --medium-black: #141414;
   --blackLighter: #9E9E9E;
   --grayLight: #F5F5F5;
   --grayMedium: #e5e5e5; 
@@ -16,7 +17,8 @@
 
 html,
 body {
-  background: #141414;
+  background: var(--medium-black);
+  color: var(--white);
   margin: 0;
   padding: 0;
 }
@@ -24,3 +26,9 @@ body {
 a {
   color: inherit;
 } 
+
+#root {
+  min-height: calc(100vh - var(--bodyPaddingTop));
+  display: flex;
+  flex-direction: column;
+}
