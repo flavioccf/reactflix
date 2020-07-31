@@ -26,6 +26,7 @@ function CadastroCategoria() {
 
   useEffect(() => {
     const URL = process.env.REACT_APP_CATEGORIES;
+    console.log(process.env);
     console.log(URL);
     fetch(URL).then(async (response) => {
       const responseBody = await response.json();
