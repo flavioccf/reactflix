@@ -1,0 +1,16 @@
+{
+    "categories": [
+        {
+            "id": 0,
+            "name": "Teste",
+            "description": "teste",
+            "color": "#A50034"
+        },
+        {
+            "id": 1,
+            "name": "Teste 2",
+            "description": "teste",
+            "color": "#A50034"
+        }
+    ]
+}
