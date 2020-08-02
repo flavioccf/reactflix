@@ -15,7 +15,8 @@
     "react-scripts": "3.4.1",
     "react-slick": "^0.27.1",
     "slick-carousel": "^1.8.1",
-    "styled-components": "^5.1.1"
+    "styled-components": "^5.1.1",
+    "sweetalert2": "^9.17.1"
   },
   "scripts": {
     "start": "node ./server.js",
