@@ -1,6 +1,7 @@
 const URL = process.env.REACT_APP_VIDEOS;
 
 function create(ojbetoDoVideo) {
+    console.log(JSON.stringify(ojbetoDoVideo));
   return fetch(`${URL}`, {
     method: 'POST',
     headers: {
