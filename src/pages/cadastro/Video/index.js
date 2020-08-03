@@ -26,6 +26,7 @@ function CadastroVideo() {
   const { handleChange, values } = useForm({
     name: '',
     id: '',
+    color: '',
   });
 
   useEffect(() => {
@@ -49,6 +50,7 @@ function CadastroVideo() {
           if (categoriaEscolhida) {
             categoriasRepository.create({
               name: values.categoria,
+              color: values.cor,
               id: categoriaEscolhida.id,
             })
               .then(() => {
@@ -70,6 +72,13 @@ function CadastroVideo() {
             onChange={handleChange}
             suggestions={categoryTitles}
           />
+          <FormField
+            label="Cor"
+            type="color"
+            name="cor"
+            value={values.cor}
+            onChange={handleChange}
+          />
 
           <Button type="submit">
             Cadastrar
@@ -77,10 +86,10 @@ function CadastroVideo() {
         </form>
 
         <br />
-        <br />
+        {/* <br />
         <Link to="/cadastro/categoria">
           Cadastrar Categoria
-        </Link>
+        </Link> */}
       </PageDefault>
     </>
   );

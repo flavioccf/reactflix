@@ -1,12 +1,54 @@
 {
   "categorias": [
     {
-      "id": 1,
-      "name": "Eletrônicos"
+      "name": "Informática",
+      "color": "#8E94F2",
+      "id": 2
     },
     {
-      "name": "Informática",
-      "id": 2
+      "name": "Games",
+      "color": "#21D19F",
+      "id": 2376
+    },
+    {
+      "name": "Jogos de Cartas",
+      "color": "#8000ff",
+      "id": 11101
+    },
+    {
+      "name": "Celular e Smartphone",
+      "color": "#21D19F",
+      "id": 77
+    },
+    {
+      "name": "TV",
+      "color": "#4E6766",
+      "id": 2852
+    },
+    {
+      "name": "Notebook",
+      "color": "#ED254E",
+      "id": 6424
+    },
+    {
+      "name": "Home Theater",
+      "color": "#8000ff",
+      "id": 3643
+    },
+    {
+      "name": "Jogos de RPG",
+      "color": "#800040",
+      "id": 6344
+    },
+    {
+      "name": "Jogos",
+      "color": "#400080",
+      "id": 6409
+    },
+    {
+      "name": "Jogos em CD / DVD-ROM",
+      "color": "#8000ff",
+      "id": 7528
     }
   ]
 }

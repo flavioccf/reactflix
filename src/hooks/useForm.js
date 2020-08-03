@@ -11,8 +11,6 @@ function useForm(initialValues) {
   }
   function handleChange(e) {
     const { name, value } = e.target;
-    console.log(name);
-    console.log(value);
     setValue(name, value);
   }
 
