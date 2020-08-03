@@ -1,4 +1,7 @@
 const URL = process.env.REACT_APP_CATEGORIAS;
+const LIST_URL = process.env.REACT_APP_LIST_CATEGORIAS;
+const OFFERS_URL = process.env.REACT_APP_OFFERS;
+const SOURCE_ID = process.env.REACT_APP_SOURCE_ID;
 
 function getAll() {
   return fetch(`${URL}`)
@@ -12,8 +15,25 @@ function getAll() {
     });
 }
 
-function getAllWithVideos() {
-  return fetch(`${URL}?_embed=videos`).then(async (response) => {
+function getMyCategories() {
+  return fetch(`${LIST_URL}/categorias`)
+    .then(async (respostaDoServidor) => {
+      if (respostaDoServidor.ok) {
+        const resposta = await respostaDoServidor.json();
+        return resposta;
+      }
+      throw new Error('Não foi possível pegar os dados :(');
+    });
+}
+
+function create(categoriesObj) {
+  return fetch(`${LIST_URL}/categorias`, {
+    method: 'POST',
+    headers: {
+      'Content-type': 'application/json',
+    },
+    body: JSON.stringify(categoriesObj),
+  }).then(async (response) => {
     if (response.ok) {
       const resp = await response.json();
       return resp;
@@ -22,7 +42,20 @@ function getAllWithVideos() {
   });
 }
 
+function getCategorieOffers(categorie) {
+  return fetch(`${OFFERS_URL}/${categorie.id}?sourceId=${SOURCE_ID}&sort=bestsellers`)
+    .then(async (offers) => {
+      const resp = await offers.json();
+      return resp.offers;
+    })
+    .catch((err) => {
+      console.log(err.message);
+    });
+}
+
 export default {
-  getAllWithVideos,
   getAll,
+  create,
+  getMyCategories,
+  getCategorieOffers,
 };
