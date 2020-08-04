@@ -70,7 +70,7 @@ function FormField({
   const fieldId = `id_${name}`;
   const isTypeTextarea = type === 'textarea';
   const tag = isTypeTextarea ? 'textarea' : 'input';
-
+  const required = true; 
   const hasValue = Boolean(value.length);
   const hasSuggestions = Boolean(suggestions.length);
 
@@ -80,7 +80,7 @@ function FormField({
         htmlFor={fieldId}
       >
         <Input
-          required="true"
+          required={required}
           as={tag}
           id={fieldId}
           type={type}

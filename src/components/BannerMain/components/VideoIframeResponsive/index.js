@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { VideoContainer, ResponsiveIframe } from './styles';
+import { OfferContainer, ResponsiveIframe } from './styles';
 
 function YouTubeIframeResponsive({ iframeUrl }) {
   return (
-    <VideoContainer>
+    <OfferContainer>
       <ResponsiveIframe
         title="Titulo do Iframe"
         src={iframeUrl}
@@ -12,7 +12,7 @@ function YouTubeIframeResponsive({ iframeUrl }) {
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
       />
-    </VideoContainer>
+    </OfferContainer>
   );
 }
 

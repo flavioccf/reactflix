@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const VideoCardContainer = styled.a`
+const OfferCardContainer = styled.a`
   border: 2px solid;
   border-radius: 4px;
   text-decoration: none;
@@ -37,3 +37,5 @@ box-shadow: inset -1px -94px 58px -50px rgba(51,51,51,0.35);
     margin-left: 20px;
   }
 `;
+
+export default OfferCardContainer;

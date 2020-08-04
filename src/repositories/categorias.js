@@ -45,12 +45,15 @@ function create(categoriesObj) {
 function getCategorieOffers(categorie) {
   return fetch(`${OFFERS_URL}/${categorie.id}?sourceId=${SOURCE_ID}&sort=discount`)
     .then(async (response) => {
-      const resp = await response.json();
-      resp.offers.color = categorie.color;
-      return resp.offers;
+      if (response.status === 200) {
+        const resp = await response.json();
+        resp.offers.color = categorie.color;
+        return resp.offers;
+      }
+      return null;
     })
     .catch((err) => {
-      console.log(err.message);
+      throw err;
     });
 }
 

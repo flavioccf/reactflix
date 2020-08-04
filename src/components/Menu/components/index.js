@@ -1,12 +1,11 @@
 import React from 'react';
 
 function ButtonLink(props) {
-
-    return (
+  return (
     <a className={props.className} href={props.href}>
-        {props.children}
+      {props.children}
     </a>
-    );
+  );
 }
 
 export default ButtonLink;

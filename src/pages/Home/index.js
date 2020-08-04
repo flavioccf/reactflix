@@ -19,7 +19,9 @@ const LoadingScreen = styled.div`
   background: rgba(0,0,0,0.5);
   text-align: center;
   display: flex;
-  flex-flow: nowrap;
+  align-items: center; 
+  justify-content: center; 
+  flex-direction: column;
   img {
     width: 100%;
     max-width: 200px;
@@ -31,7 +33,9 @@ function Home() {
   useEffect(() => {
     categoriasRepository.getMyCategories().then(async (response) => {
       const test = response.map(async (categorie) => {
-        const data = await categoriasRepository.getCategorieOffers(categorie);
+        const data = await categoriasRepository.getCategorieOffers(categorie).catch((err) => {
+          throw err;
+        });
         return data;
       });
       const off = await Promise.all(test);
@@ -42,24 +46,23 @@ function Home() {
 
   return (
     <PageDefault paddingAll={0}>
-      <LoadingScreen><p><img src={Loading} alt="Loading" /></p></LoadingScreen>
-      )
       {dadosIniciais.length === 0 && (<LoadingScreen><p><img src={Loading} alt="Loading" /></p></LoadingScreen>)}
       {dadosIniciais.map((categoria, indice) => {
-        if (categoria === undefined) {
+        if (categoria === null) {
           return (<></>);
         }
         if (indice === 0) {
           return (
             <div key={categoria[0].category.id}>
               <BannerMain
-                videoTitle={categoria[0].category.name}
+                offerTitle={categoria[0].category.name}
                 url={categoria[0].link}
-                videoDescription={categoria[0].name}
-                videoImg={Banner}
+                offerDescription={categoria[0].name}
+                offerImg={Banner}
               />
               <Carousel
-                ignoreFirstVideo
+                key={`${categoria[0].category.id}-${categoria[0].category.name}`}
+                ignoreFirstOffer
                 category={categoria}
               />
             </div>
@@ -67,7 +70,7 @@ function Home() {
         }
         return (
           <Carousel
-            key={`${categoria.id}-${categoria.name}`}
+            key={`${categoria[indice].category.id}-${categoria[indice].category.name}`}
             category={categoria}
           />
         );

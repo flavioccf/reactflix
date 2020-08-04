@@ -1,34 +1,22 @@
-import React from 'react';
-import VideoIframeResponsive from './components/VideoIframeResponsive';
+import React from 'react'
 import { BannerMainContainer, ContentAreaContainer, WatchButton } from './styles';
 
-function getYouTubeId(youtubeURL) {
-  return youtubeURL
-    .replace(
-      /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/,
-      '$7',
-    );
-}
-
 export default function BannerMain({
-  videoTitle,
-  videoDescription,
+  offerTitle,
+  offerDescription,
   url,
-  videoImg,
+  offerImg,
 }) {
-  const youTubeID = getYouTubeId(url);
-  const bgUrl = `https://img.youtube.com/vi/${youTubeID}/maxresdefault.jpg`;
-
   return (
-    <BannerMainContainer backgroundImage={videoImg}>
+    <BannerMainContainer backgroundImage={offerImg}>
       <ContentAreaContainer>
         <ContentAreaContainer.Item>
           <ContentAreaContainer.Title>
-            {videoTitle}
+            {offerTitle}
           </ContentAreaContainer.Title>
 
           <ContentAreaContainer.Description>
-            {videoDescription}
+            {offerDescription}
           </ContentAreaContainer.Description>
         </ContentAreaContainer.Item>
 

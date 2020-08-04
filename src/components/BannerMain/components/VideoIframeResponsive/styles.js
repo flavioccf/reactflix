@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const VideoContainer = styled.div`
+export const OfferContainer = styled.div`
   position: relative;
   overflow: hidden;
   width: 100%;

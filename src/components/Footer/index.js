@@ -1,5 +1,18 @@
 import React from 'react';
+import styled from 'styled-components';
 import { FooterBase } from './styles';
+import Github from '../../assets/img/github.png';
+import Linkedin from '../../assets/img/linkedin.png';
+
+const Sns = styled.div`
+  a {
+    padding: 2%;
+    img {
+      width: 100%;
+      max-width: 50px;
+    }
+  }
+`;
 
 function Footer() {
   return (
@@ -14,6 +27,10 @@ function Footer() {
           Imersão React da Alura
         </a>
       </p>
+      <Sns>
+        <a href="https://github.com/flavioccf"><img src={Github} alt="Github" /></a>
+        <a href="https://www.linkedin.com/in/flavioccf/"><img src={Linkedin} alt="Linkedin" /></a>
+      </Sns>
     </FooterBase>
   );
 }
